@@ -1,8 +1,9 @@
 "use client"
 
-import { useState, useEffect, AwaitedReactNode, JSXElementConstructor, Key, ReactElement, ReactNode, ReactPortal } from "react"
+import React from 'react'
+import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Moon, Sun, ChevronDown, ChevronUp, Globe, Book, Coffee, Gamepad, Briefcase, GraduationCap, BadgeCheck, Brain   } from "lucide-react"
+import { Moon, Sun, ChevronDown, ChevronUp, Globe, Book, Coffee, Gamepad, Briefcase, GraduationCap, BadgeCheck   } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -188,7 +189,7 @@ export function EnhancedPersonalWebsite() {
   ]
 
   return (
-    <div className={`min-h-screen bg-background text-foreground ${isDarkMode ? "dark" : ""} font-sans`}>
+    <div className={`min-h-screen bg-background text-foreground ${isDarkMode ? "dark" : ""} font-sans ${roboto.className}`}>
       <div className="container mx-auto px-4 py-8 bg-gradient-to-br from-background to-secondary">
         <motion.header
           initial={{ opacity: 0, y: -50 }}
