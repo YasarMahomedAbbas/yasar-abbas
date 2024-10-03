@@ -116,7 +116,7 @@ export function EnhancedPersonalWebsite() {
                 • Progress report to management and exco
                 • On site data/requirement gathering
               `,
-              tools: ["Unity3D", "DotNet", "Leadership", "Project Management", "Sprint Planning", "Team Building", "Communication", "Progress Reporting"],
+              tools: ["Unity3D", "DotNet", "Leadership", "Project Management", "Sprint Planning", "Team Building"],
             },
             {
               title: "Junior Lead Unity Developer",
@@ -128,7 +128,7 @@ export function EnhancedPersonalWebsite() {
                 • Team building and communication exercises
                 • Progress reports to management
               `,
-              tools: ["Unity3D", "DotNet", "Leadership", "Project Management", "Sprint Planning"],
+              tools: ["Unity3D", "DotNet", "Leadership", "Sprint Planning"],
             },
             {
               title: "Unity Developer",
