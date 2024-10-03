@@ -97,8 +97,13 @@ export function EnhancedPersonalWebsite() {
             {
               title: "Full Stack Developer",
               period: "2024 - Present",
-              description: "Leading a team of developers in creating cutting-edge web applications using React and Node.js.",
-              tools: ["DotNet", "JavaScript", "Micrsoft Azure", "JQuery", "MSSQL", "MVC", "Web API"],
+              description: `
+                • .NET developer working on the Marine Facilities Planning
+                • Implemented communications from a research vessel to enable real time reporting and tracking
+                • Implemented a comprehensive carbon emission analysis tool for end to end journeys
+                • Part of the infosec team that ensures all software is secure and compliant
+              `,
+              tools: ["DotNet", "JavaScript", "Micrsoft Azure", "MSSQL", "MVC", "Web API", "Security"],
             }
           ],
         },
