@@ -1,7 +1,6 @@
 "use client"
 
-import React from 'react'
-import { useState, useEffect } from "react"
+import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from "framer-motion"
 import { Moon, Sun, ChevronDown, ChevronUp, Globe, Book, Coffee, Gamepad, Briefcase, GraduationCap, BadgeCheck   } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -16,38 +15,52 @@ const roboto = Roboto({
 })
 
 export function EnhancedPersonalWebsite() {
-  const [isDarkMode, setIsDarkMode] = useState(false)
+  const [darkMode, setDarkMode] = useState(false)
   const [expandedSections, setExpandedSections] = useState<{ [key: string]: boolean }>({});
+
+  useEffect(() => {
+    // Check localStorage for saved theme preference
+    const savedTheme = localStorage.getItem('theme')
+    if (savedTheme === 'dark') {
+      setDarkMode(true)
+    }
+  }, [])
+
   useEffect(() => {
     // Apply custom color scheme
-    document.documentElement.style.setProperty('--background', isDarkMode ? '220 20% 15%' : '210 50% 98%')
-    document.documentElement.style.setProperty('--foreground', isDarkMode ? '220 13% 91%' : '220 20% 23%')
-    document.documentElement.style.setProperty('--muted', isDarkMode ? '220 16% 22%' : '210 40% 96%')
-    document.documentElement.style.setProperty('--muted-foreground', isDarkMode ? '220 14% 63%' : '220 15% 35%')
-    document.documentElement.style.setProperty('--popover', isDarkMode ? '220 24% 23%' : '0 0% 100%')
-    document.documentElement.style.setProperty('--popover-foreground', isDarkMode ? '220 13% 91%' : '220 20% 23%')
-    document.documentElement.style.setProperty('--card', isDarkMode ? '220 24% 23%' : '0 0% 100%')
-    document.documentElement.style.setProperty('--card-foreground', isDarkMode ? '220 13% 91%' : '220 20% 23%')
-    document.documentElement.style.setProperty('--border', isDarkMode ? '220 24% 32%' : '220 13% 91%')
-    document.documentElement.style.setProperty('--input', isDarkMode ? '220 24% 32%' : '210 40% 96%')
-    document.documentElement.style.setProperty('--primary', isDarkMode ? '217 91% 67%' : '200 85% 45%')
-    document.documentElement.style.setProperty('--primary-foreground', isDarkMode ? '220 16% 14%' : '0 0% 100%')
-    document.documentElement.style.setProperty('--secondary', isDarkMode ? '220 24% 23%' : '210 40% 96%')
-    document.documentElement.style.setProperty('--secondary-foreground', isDarkMode ? '220 13% 91%' : '220 20% 23%')
-    document.documentElement.style.setProperty('--accent', isDarkMode ? '220 15% 35%' : '210 40% 96%')
-    document.documentElement.style.setProperty('--accent-foreground', isDarkMode ? '220 13% 91%' : '220 20% 23%')
+    document.documentElement.style.setProperty('--background', darkMode ? '220 20% 15%' : '210 50% 98%')
+    document.documentElement.style.setProperty('--foreground', darkMode ? '220 13% 91%' : '220 20% 23%')
+    document.documentElement.style.setProperty('--muted', darkMode ? '220 16% 22%' : '210 40% 96%')
+    document.documentElement.style.setProperty('--muted-foreground', darkMode ? '220 14% 63%' : '220 15% 35%')
+    document.documentElement.style.setProperty('--popover', darkMode ? '220 24% 23%' : '0 0% 100%')
+    document.documentElement.style.setProperty('--popover-foreground', darkMode ? '220 13% 91%' : '220 20% 23%')
+    document.documentElement.style.setProperty('--card', darkMode ? '220 24% 23%' : '0 0% 100%')
+    document.documentElement.style.setProperty('--card-foreground', darkMode ? '220 13% 91%' : '220 20% 23%')
+    document.documentElement.style.setProperty('--border', darkMode ? '220 24% 32%' : '220 13% 91%')
+    document.documentElement.style.setProperty('--input', darkMode ? '220 24% 32%' : '210 40% 96%')
+    document.documentElement.style.setProperty('--primary', darkMode ? '217 91% 67%' : '200 85% 45%')
+    document.documentElement.style.setProperty('--primary-foreground', darkMode ? '220 16% 14%' : '0 0% 100%')
+    document.documentElement.style.setProperty('--secondary', darkMode ? '220 24% 23%' : '210 40% 96%')
+    document.documentElement.style.setProperty('--secondary-foreground', darkMode ? '220 13% 91%' : '220 20% 23%')
+    document.documentElement.style.setProperty('--accent', darkMode ? '220 15% 35%' : '210 40% 96%')
+    document.documentElement.style.setProperty('--accent-foreground', darkMode ? '220 13% 91%' : '220 20% 23%')
     document.documentElement.style.setProperty('--destructive', '0 84% 57%')
     document.documentElement.style.setProperty('--destructive-foreground', '0 0% 98%')
-    document.documentElement.style.setProperty('--ring', isDarkMode ? '217 91% 67%' : '200 85% 45%')
+    document.documentElement.style.setProperty('--ring', darkMode ? '217 91% 67%' : '200 85% 45%')
 
-    // Apply dark mode class to body
-    document.body.classList.toggle('dark', isDarkMode)
-  }, [isDarkMode])
+    // Apply theme to body
+    if (darkMode) {
+      document.body.classList.add('dark')
+    } else {
+      document.body.classList.remove('dark')
+    }
+    // Save theme preference to localStorage
+    localStorage.setItem('theme', darkMode ? 'dark' : 'light')
+  }, [darkMode])
 
   const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode)
+    setDarkMode(!darkMode)
   }
-
 
   const toggleSection = (section: string) => {
     setExpandedSections((prev) => ({ ...prev, [section]: !prev[section] }));
@@ -194,7 +207,7 @@ export function EnhancedPersonalWebsite() {
   ]
 
   return (
-    <div className={`min-h-screen bg-background text-foreground ${isDarkMode ? "dark" : ""} font-sans ${roboto.className}`}>
+    <div className={`min-h-screen bg-background text-foreground ${darkMode ? "dark" : ""} font-sans ${roboto.className}`}>
       <div className="container mx-auto px-4 py-8 bg-gradient-to-br from-background to-secondary">
         <motion.header
           initial={{ opacity: 0, y: -50 }}
@@ -210,11 +223,11 @@ export function EnhancedPersonalWebsite() {
             <button
               onClick={toggleDarkMode}
               className={`p-2 rounded-full transition-colors duration-200 ${
-                isDarkMode ? 'bg-yellow-400 text-gray-900' : 'bg-gray-700 text-yellow-400'
+                darkMode ? 'bg-yellow-400 text-gray-900' : 'bg-gray-700 text-yellow-400'
               }`}
-              aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
+              aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
             >
-              {isDarkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+              {darkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </button>
           </div>
         </motion.header>
