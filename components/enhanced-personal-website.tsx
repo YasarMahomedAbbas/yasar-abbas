@@ -107,7 +107,7 @@ export function EnhancedPersonalWebsite() {
           roles: [
             {
               title: "Lead Unity Developer",
-              period: "2017 - 2020",
+              period: "2022 - 2024",
               description: `
                 • Developing mining vehicle simulations using Unity3D, example product: Youtube Link
                 • Managing 7 developers (3 senior, 1 intermediate, 3 juniors) and 2 testers
@@ -120,7 +120,7 @@ export function EnhancedPersonalWebsite() {
             },
             {
               title: "Junior Lead Unity Developer",
-              period: "2017 - 2020",
+              period: "2021 - 2022",
               description: `
                 • Developing mining vehicle simulations using Unity3D
                 • Working with Software Manager to manage a team of 3 developers and 1 tester
@@ -149,7 +149,7 @@ export function EnhancedPersonalWebsite() {
               title: "Computer Science Tutor",
               period: "2017 - 2019",
               description: "Tutoring and guiding undergraduate students of computer science",
-              tools: ["Python, Java"],
+              tools: ["Python", "Java"],
             },
           ],
         },
