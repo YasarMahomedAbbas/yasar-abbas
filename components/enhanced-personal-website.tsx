@@ -127,7 +127,7 @@ export function EnhancedPersonalWebsite() {
               title: "Lead Unity Developer",
               period: "2022 - 2024",
               description: `
-                • Developing mining vehicle simulations using Unity3D, example product: Youtube Link
+                • Developing mining vehicle simulations using Unity3D
                 • Managing 7 developers (3 senior, 1 intermediate, 3 juniors) and 2 testers
                 • Conducting standups, sprint planning overall team organization e.g. leave, performance appraisals
                 • Interdepartmental communication
@@ -186,7 +186,7 @@ export function EnhancedPersonalWebsite() {
     },
     {
       category: "Programming Languages",
-      items: ["C#","JavaScript", "TypeScript", "Python", "Java", "C++"],
+      items: ["C#","JavaScript", "TypeScript", "Dart", "Python", "Java", "C++"],
     },
     {
       category: "Development Tools",
@@ -198,12 +198,20 @@ export function EnhancedPersonalWebsite() {
     },
     {
       category: "Testing Frameworks",
-      items: ["NUnit","XUnit", "Moq", "pytest"],
+      items: ["NUnit","MSTest", "Moq", "pytest", "flutter_test"],
     },
     {
       category: "Game Development Tools",
       items: ["Unity3D", "Plastic SCM"],
     },
+    {
+      category: "Mobile Development Tools",
+      items: ["Flutter", "Android Studio"],
+    },
+    {
+      category: "Design Tools",
+      items: ["Figma"],
+    }
   ]
 
   return (
